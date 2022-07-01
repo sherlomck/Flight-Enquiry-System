@@ -1,0 +1,231 @@
+<style>
+    .maincontainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #b2bec3;
+    }
+    .root{
+        width: 1000px;
+        height: auto;
+        background: #ecf0f1;
+        padding: 10px;
+
+    }
+    .heading{
+        color: #2d3436;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Oxygen;
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+    }
+    .rowgap{
+        margin-top: 40px;
+    }
+</style>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/javascripts/jeequery.js"></script>
+<script>
+    $(document).ready(function(){
+    $('select').formSelect();
+    });
+
+    $(document).ready(function(){
+    $('.timepicker').timepicker();
+    });
+</script>
+
+<html>
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    </head>
+    <title>Node_CSS</title>
+    <body>
+    <form action="/enquiry/add_record" method="post" enctype="multipart/form-data">
+        <div class="maincontainer">
+        <div class="root">
+            <div class="heading">
+            <span><img src="/images/vistara-logo.png" width="200" align="left"></span><h3>Flight Enquiry System</h3>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col s6">
+                    <div class="input-field">
+                        <i class="material-icons prefix">airplanemode_active</i>
+                        <input id="icon_fid" name="flightid" type="text" class="validate">
+                        <label for="icon_fid">Flight Id</label>
+                    </div>                
+                </div>
+                <div class="col s6">
+                    <div class="input-field">
+                        <i class="material-icons prefix">business</i>
+                        <input id="icon_com" name="companyname" type="text" class="validate">
+                        <label for="icon_com">Company Name</label>
+                    </div>                
+                </div>
+                <div class="col s3">
+                    <div class="input-field">
+                        <i class="material-icons prefix">flight_takeoff</i>
+                        <select name="sourcestate" id="sourcestate">
+                        <option value="" disabled selected>--Choose option--</option>
+                        </select>
+                        <label>Source State</label>
+                    </div>                
+                </div>
+                <div class="col s3">
+                    <div class="input-field">
+                        <i class="material-icons prefix">flight_takeoff</i>
+                        <select name="sourcecity" id="sourcecity">
+                        <option value="" disabled selected>--Choose option--</option>
+                        </select>
+                        <label>Source City</label>
+                    </div>                
+                </div>
+                <div class="col s3">
+                    <div class="input-field">
+                        <i class="material-icons prefix">flight_takeoff</i>
+                        <select name="desstate" id="desstate">
+                        <option value="" disabled selected>--Choose option--</option>
+                        </select>
+                        <label>Destination State</label>
+                    </div>              
+                </div>
+                <div class="col s3">
+                    <div class="input-field">
+                        <i class="material-icons prefix">flight_takeoff</i>
+                        <select name="descity" id="descity">
+                        <option value="" disabled selected>--Choose option--</option>
+                        </select>
+                        <label>Source City</label>
+                    </div>                  
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <div class="input-field">
+                        <select name="status">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option>Non Stop</option>
+                        <option>Layover</option>
+                        </select>
+                        <label>Status</label>
+                    </div>
+                </div>
+                <div class="col s6" style="display: flex;flex-direction: row;justify-content:space-around">
+                    <p>
+                        <label>
+                        <input name="fclass" value="Business" type="checkbox" />
+                        <span>Business</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                        <input name="fclass" value="Economy" type="checkbox" />
+                        <span>Economy</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <div class="input-field">
+                        <i class="material-icons prefix">access_time</i>
+                        <input id="icon_sourcetime" name="sourcetime" type="text" class="timepicker">
+                        <label for="icon_sourcetime">Source Timing</label>
+                    </div>
+                </div>
+                <div class="col s6">
+                    <div class="input-field">
+                        <i class="material-icons prefix">access_time</i>
+                        <input id="icon_destime" name="destime" type="text" class="timepicker">
+                        <label for="icon_destime">Destination Timing</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12" style="display: flex;flex-direction: row;justify-content:space-around">
+                    <p>
+                        <label>
+                        <input name="days" value="Sunday" type="checkbox" />
+                        <span>Sunday</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                        <input name="days" value="Monday" type="checkbox" />
+                        <span>Monday</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                        <input name="days" value="Tuesday" type="checkbox" />
+                        <span>Tuesday</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                        <input name="days" value="Wednesday" type="checkbox" />
+                        <span>Wednesday</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                        <input name="days" value="Thursday" type="checkbox" />
+                        <span>Thursday</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                        <input name="days" value="Friday" type="checkbox" />
+                        <span>Friday</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                        <input name="days" value="Saturday" type="checkbox" />
+                        <span>Saturday</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s3">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                        <span>File</span>
+                        <input type="file" name="boarding" id="boarding">
+                        </div>
+                        <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col s2" style="display:flex">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+                <div class="col s5" style="display: flex;justify-content:center;font-size: 24;font-weight: bold;color: #009432;"><%= msg %></div>
+                <div class="col s2">
+                    <button class="btn waves-effect waves-light" type="reset" name="action">Reset
+                        <i class="material-icons right">cached</i>
+                    </button>
+                </div>    
+            </div>
+        </div>
+        </div>
+    </form>    
+    </body>
+</html>
+
+<!-- JavaScript at end of body for optimized loading-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
